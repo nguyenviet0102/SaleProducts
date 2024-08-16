@@ -1,0 +1,57 @@
+<!-- <app-header></app-header> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="register-form mx-auto">
+                <h2 class="register-header">Register</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label><br>
+                        <input type="text" class="form-control" id="fullname" required aria-label="Full Name">
+                        <div class="divider-nospace"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label><br>
+                        <input type="email" class="form-control" id="email" required aria-label="Email">
+                        <div class="divider-nospace"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label><br>
+                        <input type="text" class="form-control" id="phone" required aria-label="Phone">
+                        <div class="divider-nospace"></div>
+                    </div>
+                    <div class="form-group password-field">
+                        <label for="password">Password</label><br>
+                        <input type="password" placeholder="more than 3 letters" class="form-control" id="password" required aria-label="Password">
+                        <i class="password-toggle fas fa-eye-slash"></i>
+                        <div class="divider-nospace"></div>
+                    </div>
+                    <div class="form-group password-field">
+                        <label for="confirm-password">Confirm Password</label><br>
+                        <input type="password" placeholder="confirm your password" class="form-control" id="confirm-password" required aria-label="Confirm Password">
+                        <i class="password-toggle fas fa-eye-slash"></i>
+                        <div class="divider-nospace"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check checkbox-text">
+                            <span style="display: flex;">
+                                <input type="checkbox" name="form-check-input" id="terms">
+                                <label class="form-check-label text-start" for="terms">I agree to the Terms and Conditions</label>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="submit" class="register-button">Register</button>
+                    <div class="divider"></div>
+                    <p class="text-center">Already have an account?
+                        <span>
+                            <a href="#" class="login-link">Login</a>
+                        </span>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+

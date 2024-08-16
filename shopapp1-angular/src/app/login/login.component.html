@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="login-form mx-auto">
+                <h2 class="login-header">Login</h2>
+                <div class="form-group">
+                    <label for="email">Email/Phone</label><br>
+                    <input type="text" class="form-cotrol" id="email">
+                    <div class="divider-nospace"></div> <!-- Dau gach chan o duoi-->
+                </div>
+                <div class="mt-5"></div>
+                <div class="form-group password-field">
+                    <label for="password">Password</label><br>
+                    <input type="password" placeholder="more than 3 letters" class="form-cotrol" id="password">
+                    <i class="password-toogle fas fa-eye-slash"></i>
+                    <div class="divider-nospace"></div>
+                </div>
+                <div class="form-group">
+                    <div class="form-check checkbox-text">
+                        <span style="display: flex;">
+                            <input type="checkbox" name="form-check-input" id="remember">
+                            <label class="form-check-label text-start" for="remember">Save Accounts</label>
+                        </span>
+                        <a href="#" class="register-link">Forgot password</a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <select class="form-cotrol access-right" >
+                        <option selected disabled>Quyền đăng nhập</option> <!--Không click được option này-->
+                        <option >User</option>
+                        <option>Admin</option>
+                    </select>
+                </div>
+                <button type="button" class="login-button">Login</button>
+                <div class="divider"></div>
+                <p class="text-center">Do you register?
+                    <span>
+                        <a href="#" class="register-link">Creat Accounts</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

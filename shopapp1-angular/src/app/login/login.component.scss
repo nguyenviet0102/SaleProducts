@@ -1,0 +1,256 @@
+.container{
+    color: white;
+}
+.login-form{
+    background-color: rgb(9, 9, 61);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 500px;
+    border: 1px solid rgb(32, 34, 60);
+    align-items: center;
+    justify-content: center;
+}
+// .login-header{
+//     text-align: center;
+//     color: rgb(248, 248, 248);
+//     margin-bottom: 20px;
+// }
+// .form-cotrol{
+//     background-color: transparent;
+//     border: 1px solid rgb(105, 244, 181);
+//     color: rgb(255, 255, 255);
+// }
+// .form-cotrol:focus{ //chon vao input se bien mat border
+//     color: white;
+//     background-color: transparent;
+//     outline: none;
+//     border-color: transparent;
+// }
+// .form-cotrol::placeholder{
+//     //firefox, safari, opera
+//     color: rgba(177, 225, 228, 0.4);
+//     opacity: 1;
+//     //firefox
+// }
+// .form-cotrol::-ms-input-placeholder{
+//     //explorer
+//     color: rgba(243, 165, 42, 0.4);
+// }
+// // .form-control.access-right {
+// //     width: 100%; /* Đặt chiều rộng bằng 100% của phần tử chứa */
+// //     padding: 10px; /* Khoảng cách bên trong */
+// //     border: 2px solid #007bff; /* Màu viền */
+// //     border-radius: 5px; /* Bo tròn các góc */
+// //     background-color: #f9f9f9; /* Màu nền */
+// //     font-size: 16px; /* Kích thước chữ */
+// //     color: #333; /* Màu chữ */
+// //     cursor: pointer; /* Con trỏ chuột */
+// //   }
+
+// .divider-nospace{
+//     border-top: 1px solid white;
+    
+// }
+// .password-field{
+//     position: relative;
+// }
+// .password-toogle{
+//     position: absolute;
+//     top: 50%;
+//     right: 10px;
+//     transform: translateY(-50%);
+//     color: rgb(105, 244, 181);
+//     cursor: pointer; // di chuyen con tro den doi 
+// }
+// .checkbox-text{
+//     color: rgb(114, 234, 160);
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-top: 5px;
+// }
+
+// //color checkbox khi được chọn
+// .checkbox-text input[type="checkbox"]:checked{
+//     border-color: white;
+//     background-color: rgb(152, 55, 120);
+// }
+// .form-check-input{
+//     margin-right: 5px;
+// }
+// .register-link{
+//     color: rgb(105, 244, 181);
+//     text-decoration: none;
+// }
+// .access-right{
+//     margin-top: 20px;
+//     width: 200px;
+//     color: rgb(134, 177, 156);
+//     border: 1px solid rgb(49, 42, 243);
+// }
+// .access-right:focus{
+//     border: 1px solid rgb(225, 32, 32);
+// }
+
+.login-button{
+    background: linear-gradient(to right, rgb(225,64,180), rgb(126,43,237));
+    // background-color: rgba(233, 44, 123, 0.5);
+    color: rgb(0, 0, 0);
+    border-radius: 30px;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 20px;
+    border: none;
+}
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* Reset một số kiểu mặc định */
+body, h2, p, label, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Kiểu chung cho body */
+//   body {
+//     font-family: Arial, sans-serif;
+//     background: linear-gradient(to right, rgb(225,64,180), rgb(126,43,237));
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100vh;
+//   }
+  
+  /* Container chính cho login form */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+//   .login-form {
+//     background: #092558;
+//     padding: 20px;
+//     border-radius: 8px;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     width: 100%;
+//     max-width: 400px;
+//   }
+  
+  /* Tiêu đề của form login */
+  .login-header {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f4f3f3;
+    font-size: 24px;
+  }
+  
+  /* Kiểu cho các nhóm trường form */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fffdfd;
+  }
+  
+  .form-cotrol {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  /* Kiểu cho dòng phân cách */
+  .divider-nospace {
+    border-bottom: 1px solid #ddd;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Kiểu cho trường password và icon mắt */
+  .password-field {
+    position: relative;
+    color: rgb(0, 0, 0);
+  }
+  
+  .password-toogle {
+    position: absolute;
+    top: 80%;
+    right: 10px;
+    transform: translateY(-75%);
+    cursor: pointer;
+  }
+  
+  /* Khoảng cách giữa các phần tử */
+  .mt-5 {
+    margin-top: 20px;
+  }
+  
+  .checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .register-link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  //di trỏ đến hiện ra gạch chân bê dưới
+  .register-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Kiểu cho nút login */
+//   .login-button {
+//     background-color: #007bff;
+//     color: white;
+//     border: none;
+//     border-radius: 4px;
+//     padding: 10px 15px;
+//     font-size: 16px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+//     width: 100%;
+//   }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .login-button:active {
+    background-color: #004085;
+  }
+  
+  .login-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* Kiểu cho câu hỏi đăng ký và liên kết */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-center a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+//   để áp dụng kiểu khi người dùng di chuột qua liên kết
+  .text-center a:hover {
+    text-decoration: underline;
+  }
+.divider{
+    height: 1px;
+    background-color: rgb(243, 165, 42);
+    margin: 10px;
+    //margin-right: 50px;
+}
+  
