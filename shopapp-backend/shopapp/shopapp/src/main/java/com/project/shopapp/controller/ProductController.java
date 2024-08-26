@@ -17,12 +17,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1/products")
+@RequestMapping("${api.prefix}/products")
 public class ProductController {
     @PostMapping(value = "", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)    //update anh len duoc chuyen thanh tung phan
     //http://localhost:8080/api/v1/products
@@ -46,22 +47,31 @@ public class ProductController {
             //save the product
 //            ProducService.createProduct(productDTO);
 
-            MultipartFile file = productDTO.getFile();
-            if (file != null){
-                //Kiem tra kich thuoc file img va dinh dang
-                if (file.getSize() > 10*1024*1024){ //kich thuoc file >10mb
+            List<MultipartFile> files = productDTO.getFiles();
+            files = files == null ? new ArrayList<MultipartFile>() : files; //Tao 1 mang rong khong hoac tra ve mang da request
+            for (MultipartFile file : files){
+                if (file.getSize() == 0){
+                    continue;
+                }
+
+                if (file != null){
+                    //Kiem tra kich thuoc file img va dinh dang
+                    if (file.getSize() > 10*1024*1024){ //kich thuoc file >10mb
 //                throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "File is too large, Max just 10MB");
-                    //Giong ket qua ben tren
-                    return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body("File is too large, Max just 10MB");
+                        //Giong ket qua ben tren
+                        return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body("File is too large, Max just 10MB");
+                    }
+                    String contentType = file.getContentType(); //lay ra dinh dang file
+                    if (contentType == null || !contentType.startsWith("image/")){  //kiem tra dinh dang, va co bat dau bang chu image khong?
+                        return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE).body("File must be an image");
+                    }
+                    //Luu file va cap nhat anh trong DTO
+                    String fileName = storeFile(file);  //Thay the ham nay voi code cua ban di
+                    //Luu vao doi tuong trong DB
+                    //Luu vao table product_image
                 }
-                String contentType = file.getContentType(); //lay ra dinh dang file
-                if (contentType == null || !contentType.startsWith("image/")){  //kiem tra dinh dang, va co bat dau bang chu image khong?
-                    return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE).body("File must be an image");
-                }
-                //Luu file va cap nhat anh trong DTO
-                String fileName = storeFile(file);  //Thay the ham nay voi code cua ban di
-                //Luu vao doi tuong trong DB
             }
+
 //            {
 //                "name": "ipad pro 2023",
 //                    "price": 812.34,

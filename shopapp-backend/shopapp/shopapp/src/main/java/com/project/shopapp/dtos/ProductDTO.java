@@ -9,6 +9,7 @@ import lombok.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Getter //toString hien thi thong tin chi tiest object
@@ -29,5 +30,5 @@ public class ProductDTO implements Serializable {
 
     @JsonProperty("category_id")    //mapping sao cho phu voi truong du lieu trong DB
     private String categoryId;
-    private MultipartFile file;
+    private List<MultipartFile> files;
 }
